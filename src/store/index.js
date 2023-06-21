@@ -1,9 +1,8 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createApp } from 'vue';
+import { createStore } from 'vuex';
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+const app = createApp({});
+const store = createStore({
   state: {
   },
   mutations: {
@@ -11,3 +10,7 @@ export default new Vuex.Store({
   actions: {
   },
 });
+
+app.use(store);
+
+export default store;
