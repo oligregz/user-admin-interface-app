@@ -1,31 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import LoginView from '../views/login/LoginView.vue';
-import RegisterView from '../views/register/RegisterView.vue';
-import EmployeeView from '../views/employee/EmployeeView.vue';
-import AdmView from '../views/adm/AdmView.vue';
-
-
 const routes = [
   {
     path: '/',
     name: 'login',
-    component: LoginView
+    component: () => import('../views/login/LoginView')
   },
   {
     path: '/register',
     name: 'register',
-    component: RegisterView
+    component: () => import('../views/register/RegisterView.vue')
   },
   {
     path: '/employee',
     name: 'employee',
-    component: EmployeeView
+    component: () => import('../views/employee/EmployeeView.vue')
   },
   {
     path: '/adm',
     name: 'adm',
-    component: AdmView
+    component: () => import('../views/adm/AdmView.vue')
   },
 ]
 

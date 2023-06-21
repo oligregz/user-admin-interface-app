@@ -1,34 +1,13 @@
-import { createStore } from 'vuex';
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-export default createStore({
+Vue.use(Vuex);
+
+export default new Vuex.Store({
   state: {
-    user: null,
-  },
-  getters: {
   },
   mutations: {
-    SET_USER (state, user) {
-      state.user = user
-    },
-
-    CLEAR_USER (state) {
-      state.user = null
-    }
   },
   actions: {
-    async register({commit}, details) {
-      //
-    },
-    
-    async login({commit}, details) {
-      //
-    },
-
-    async logout({commit}) {
-      //
-    }
   },
-
-  modules: {
-  }
 });
