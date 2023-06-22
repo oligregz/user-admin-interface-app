@@ -1,0 +1,1 @@
+// Aqui terá a função que recebe o payload e gurada no localStorage

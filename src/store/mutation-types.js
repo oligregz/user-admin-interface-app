@@ -1,0 +1,2 @@
+export const SET_USER_ADM = 'LOGIN/SET_USER';
+export const SET_EMPLOYEE = 'EMPLOYEE/SET_EMPLOYEE';
