@@ -76,11 +76,24 @@ export default {
       password: '',
     }
   }),
+  created() {
+    const userAdm = {
+      id: 2,
+      email: 'fulana@example.com',
+      password: 'asdf1234'
+    };
+    localStorage.setItem('userAdm', JSON.stringify(userAdm));
+  },
   methods: {
     ...mapActions(['ActionSetUserAdm']),
     submit() {
-      this.ActionSetUserAdm(admValues(this.form));
-      this.$router.push('/adm');
+      const userAdm = JSON.parse(localStorage.getItem('userAdm'));
+      if (userAdm && userAdm.email === this.form.email && userAdm.password === this.form.password) {
+        this.ActionSetUserAdm(admValues(this.form));
+        this.$router.push('/adm');
+      } else {
+        this.$router.push('/register');
+      }
     }
   }
 }
