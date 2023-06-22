@@ -17,6 +17,7 @@
         <a
           href="/"
           class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
+          @click="handleLogout"
         >
           LOGOUT
         </a>
@@ -31,4 +32,8 @@ import { ref } from "vue";
 const userEmail = ref(localStorage.getItem("userAdm"));
 const parsedUserEmail = JSON.parse(userEmail.value);
 const firstLetter = parsedUserEmail.email.charAt(0).toUpperCase();
+
+const handleLogout = () => {
+  localStorage.removeItem("userAdm");
+}
 </script>
