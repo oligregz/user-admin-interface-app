@@ -66,7 +66,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import admValues from "../../repository/index";
+import admValues from "../../repository/serviceAdm";
 
 export default {
   data: () => ({

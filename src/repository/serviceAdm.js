@@ -2,6 +2,8 @@ import uuidGenerator from '../utils/uuidGenerator';
 
 const saveUserAdm = (payload) => {
 
+  localStorage.clear();
+
   const adm = JSON.stringify(
     {
       id: uuidGenerator,
