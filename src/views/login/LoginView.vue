@@ -66,10 +66,12 @@
 
 <script>
 import { mapActions } from 'vuex';
+import admValues from "../../repository/index";
 
 export default {
   data: () => ({
     form: {
+      id: '',
       email: '',
       password: '',
     }
@@ -77,7 +79,8 @@ export default {
   methods: {
     ...mapActions(['ActionSetUserAdm']),
     submit() {
-      this.ActionSetUserAdm(this.form);
+      this.ActionSetUserAdm(admValues(this.form));
+      this.$router.push('/adm');
     }
   }
 }

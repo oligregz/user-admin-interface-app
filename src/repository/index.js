@@ -1,7 +1,10 @@
+import uuidGenerator from '../utils/uuidGenerator';
+
 const saveUserAdm = (payload) => {
 
   const adm = JSON.stringify(
     {
+      id: uuidGenerator,
       email: payload.email,
       password: payload.password,
     }
