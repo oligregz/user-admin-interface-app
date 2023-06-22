@@ -22,6 +22,7 @@
               type="text"
               placeholder="Digite seu email"
               v-model="form.email"
+              required
             />
           </div>
         </div>
@@ -41,6 +42,7 @@
               type="password"
               placeholder="******************"
               v-model="form.password"
+              required
             />
           </div>
         </div>
