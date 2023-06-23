@@ -1,13 +1,14 @@
 import uuidGenerator from '../utils/uuidGenerator';
 
-const saveUserAdm = (payload) => {
-
+const registerUserAdm = (payload) => {
+  console.log("chegou");
   localStorage.clear();
 
   const adm = JSON.stringify(
     {
       id: uuidGenerator,
       name: payload.name,
+      email: payload.email,
       password: payload.password,
     }
   );
@@ -21,4 +22,4 @@ const saveUserAdm = (payload) => {
   return admValues;
 }
 
-export default saveUserAdm;
+export default registerUserAdm;

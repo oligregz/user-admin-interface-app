@@ -29,9 +29,9 @@
 <script setup>
 import { ref } from "vue";
 
-const userEmail = ref(localStorage.getItem("userAdm"));
-const parsedUserEmail = JSON.parse(userEmail.value);
-const firstLetter = parsedUserEmail.email.charAt(0).toUpperCase();
+const userName = ref(localStorage.getItem("userAdm"));
+const parsedUserName = JSON.parse(userName.value);
+const firstLetter = parsedUserName.name.charAt(0).toUpperCase();
 
 const handleLogout = () => {
   localStorage.removeItem("userAdm");
