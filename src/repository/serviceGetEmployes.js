@@ -9,7 +9,7 @@ const getEmployes = () => {
     nome: "Jonas",
     sobrenome: "Bilharino Santos",
     cargo: "desenvolvedor frontend",
-    dataInício: new Date().toISOString(),
+    dataInicio: new Date().toISOString(),
     ativo: true,
     criador: {
       id: userAdm.id,
@@ -21,7 +21,7 @@ const getEmployes = () => {
     nome: "Laura",
     sobrenome: "Bittencourt Freitz",
     cargo: "desenvolvedor frontend",
-    dataInício: new Date().toISOString(),
+    dataInicio: new Date().toISOString(),
     ativo: true,
     criador: {
       id: userAdm.id,
