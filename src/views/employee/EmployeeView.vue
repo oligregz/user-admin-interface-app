@@ -52,6 +52,7 @@ export default {
       localStorage.setItem("employes", JSON.stringify(this.employes));
     },
     saveEmployeeData(selectedEmployee) {
+      localStorage.removeItem('edit-employe');
       localStorage.setItem('edit-employe', JSON.stringify(selectedEmployee));
       let employee = localStorage.getItem('edit-employe');
       if (employee) {

@@ -6,7 +6,7 @@ const saveUserAdm = (payload) => {
 
   const adm = JSON.stringify(
     {
-      id: uuidGenerator,
+      id: uuidGenerator(),
       name: payload.name,
       password: payload.password,
     }

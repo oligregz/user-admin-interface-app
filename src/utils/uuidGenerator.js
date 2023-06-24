@@ -4,6 +4,6 @@
 
 const { v4: uuidv4 } = require('uuid');
 
-let myuuid = uuidv4();
+let myuuid = () => uuidv4();
 
 export default myuuid;

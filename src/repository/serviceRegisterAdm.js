@@ -5,7 +5,7 @@ const registerUserAdm = (payload) => {
 
   const adm = JSON.stringify(
     {
-      id: uuidGenerator,
+      id: uuidGenerator(),
       name: payload.name,
       email: payload.email,
       password: payload.password,
@@ -13,11 +13,7 @@ const registerUserAdm = (payload) => {
   );
 
   localStorage.setItem('userAdm', adm)
-
   const admValues = JSON.parse(localStorage.getItem('userAdm'));
-
-  console.log(admValues);
-
   return admValues;
 }
 

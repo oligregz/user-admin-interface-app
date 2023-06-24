@@ -5,7 +5,7 @@ const getEmployes = () => {
   const userAdm = JSON.parse(localStorage.getItem('userAdm'));
   
   const employee1 = {
-    id: uuidGenerator,
+    id: uuidGenerator(),
     nome: "Jonas",
     sobrenome: "Bilharino Santos",
     cargo: "desenvolvedor frontend",
@@ -16,8 +16,9 @@ const getEmployes = () => {
       nome: userAdm.name
     }
   }
+
   const employee2 = {
-    id: uuidGenerator,
+    id: uuidGenerator(),
     nome: "Laura",
     sobrenome: "Bittencourt Freitz",
     cargo: "desenvolvedor frontend",
@@ -30,9 +31,7 @@ const getEmployes = () => {
   }
   const employesArr = [employee1, employee2];
   localStorage.setItem('employes', JSON.stringify(employesArr));
-  
   const employes = JSON.parse(localStorage.getItem('employes'))
-  console.log(employes);
   return employes;
 }
 
