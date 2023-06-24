@@ -3,8 +3,12 @@
     <NavBar />
     <nav>
       <div class="box-navigatin">
-        <a href="/employees" type="button" class="btn btn-primary btn-lg">FUNCIONÁRIOS</a>
-        <a href="/administration" type="button" class="btn btn-secondary btn-lg">GESTÃO</a>
+        <a href="/employees" type="button" class="btn btn-primary btn-lg"
+          >FUNCIONÁRIOS</a
+        >
+        <a href="/administration" type="button" class="btn btn-secondary btn-lg"
+          >GESTÃO</a
+        >
       </div>
     </nav>
   </div>

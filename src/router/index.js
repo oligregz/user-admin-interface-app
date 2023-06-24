@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/employees',
     name: 'employees',
-    component: () => import('../views/employee/EmployeeView.vue')
+    component: () => import('../views/employees/EmployeesView.vue')
   },
   {
     path: '/adm',
@@ -24,6 +24,10 @@ const routes = [
     path: '/administration',
     name: 'administration',
     component: () => import('../views/administartion/AdministrationView.vue')
+  },  {
+    path: '/employee',
+    name: 'employee',
+    component: () => import('../views/employee/EmployeeView.vue')
   },
 ]
 

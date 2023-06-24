@@ -1,32 +1,72 @@
 <template>
   <div class="main" id="employee">
     <NavBar />
-    <ul>
-      <div
-        v-for="(employee, index) in employes"
-        :key="employee.id"
-        class="employee-section"
-        @click="saveEmployeeData(employee)"
-      >
-        <li class="employee">
-          <p>{{ `Id: ${employee.id}` }}</p>
-          <p>{{ `Nome Completo: ${employee.nome} ${employee.sobrenome}` }}</p>
-          <p>{{ `Cargo: ${employee.cargo}` }}</p>
-          <p>{{ `Data de início: ${employee.dataInicio}` }}</p>
-          <p>{{ `Contratante: ${employee.criador.nome}` }}</p>
-          <p>{{ `Id do contratante: ${employee.criador.id}` }}</p>
-        </li>
-        <button type="button" @click="removeEmployeeSection(index)">
-          Remover funcionário
+    <div class="edit-employee-section">
+      <form>
+        <label for="nome">Nome:</label>
+        <input
+          id="nome"
+          type="text"
+          v-model="employee.nome"
+          :disabled="!editing"
+        />
+
+        <label for="sobrenome">Sobrenome:</label>
+        <input
+          id="sobrenome"
+          type="text"
+          v-model="employee.sobrenome"
+          :disabled="!editing"
+        />
+
+        <label for="cargo">Cargo:</label>
+        <input
+          id="cargo"
+          type="text"
+          v-model="employee.cargo"
+          :disabled="!editing"
+        />
+
+        <label for="dataInicio">Data de Início:</label>
+        <input
+          id="dataInicio"
+          type="text"
+          v-model="employee.dataInicio"
+          :disabled="!editing"
+        />
+
+        <label for="nomeCriador">Nome do Criador:</label>
+        <input
+          id="nomeCriador"
+          type="text"
+          v-model="employee.criador.nome"
+          :disabled="!editing"
+        />
+
+        <label for="ativo">Ativo:</label>
+        <select id="ativo" v-model="employee.ativo" :disabled="!editing">
+          <option value="true">true</option>
+          <option value="false">false</option>
+        </select>
+
+        <button v-if="!editing" type="button" @click="startEditing">
+          Clique para ter a permissão de edição do funcionário
         </button>
-      </div>
-    </ul>
+        <button
+          v-if="editing"
+          type="button"
+          @click="saveEmployee"
+          :disabled="!isFormValid"
+        >
+          Salvar
+        </button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 import NavBar from "../../components/NavBar.vue";
-import getEmployes from "../../repository/serviceGetEmployes";
 
 export default {
   components: {
@@ -34,33 +74,67 @@ export default {
   },
   data() {
     return {
-      employes: [],
+      employee: {},
+      editing: false,
     };
   },
   created() {
-    this.fetchEmployes();
+    this.fetchEmployeeData();
+  },
+  computed: {
+    isFormValid() {
+      return (
+        this.employee.nome &&
+        this.employee.sobrenome &&
+        this.employee.cargo &&
+        this.employee.dataInicio &&
+        this.employee.criador.nome &&
+        this.employee.ativo
+      );
+    },
   },
   methods: {
-    fetchEmployes() {
-      const employesData = getEmployes();
-      for (let i = 0; i < employesData.length; i++) {
-        this.employes.push(employesData[i]);
-      }
+    fetchEmployeeData() {
+      const employeeData = JSON.parse(localStorage.getItem("edit-employe"));
+      this.employee = employeeData;
     },
-    removeEmployeeSection(index) {
-      this.employes.splice(index, 1);
-      localStorage.setItem("employes", JSON.stringify(this.employes));
+    startEditing() {
+      this.editing = true;
     },
-    saveEmployeeData(selectedEmployee) {
-      localStorage.removeItem('edit-employe');
-      localStorage.setItem('edit-employe', JSON.stringify(selectedEmployee));
-      let employee = localStorage.getItem('edit-employe');
-      if (employee) {
-        this.$router.push('/employee')
-      }
+    saveEmployee() {
+      localStorage.removeItem("edit-employe");
+      localStorage.setItem("edit-employe", JSON.stringify(this.employee));
+      this.editing = false;
     },
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.edit-employee-section {
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 10px;
+  color: black;
+}
+
+option {
+  color: black;
+}
+
+button {
+  margin-top: 10px;
+}
+</style>
