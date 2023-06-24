@@ -36,5 +36,6 @@ const firstLetter = parsedUserName.name.charAt(0).toUpperCase();
 const handleLogout = () => {
   localStorage.removeItem("userAdm");
   localStorage.removeItem("edit-employee");
+  localStorage.removeItem("employes");
 }
 </script>
