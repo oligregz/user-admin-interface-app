@@ -1,7 +1,6 @@
 import uuidGenerator from '../utils/uuidGenerator';
 
 const registerUserAdm = (payload) => {
-  console.log("chegou");
   localStorage.clear();
 
   const adm = JSON.stringify(

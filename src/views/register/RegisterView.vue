@@ -101,7 +101,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions('REGISTER', ['ActionSetRegisterUserAdm']),
+    ...mapActions('REGISTER', ['ActionSetUserAdm']),
     submit() {
       const userAdm = JSON.parse(localStorage.getItem('userAdm'));
       if (userAdm.name === this.form.name
@@ -110,7 +110,7 @@ export default {
         this.$router.push('/');
         return;
       } else {
-        this.ActionSetRegisterUserAdm(registerUserAdm(this.form));
+        this.ActionSetUserAdm(registerUserAdm(this.form));
         alert("Usuário cadastrado!")
         this.$router.push('/adm');
       }

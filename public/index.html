@@ -13,6 +13,18 @@
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        color: #fff;
+        min-height: 100vh;
+      }
+      #app {
+        min-height: 100vh;
+      }
+    </style>  
   </head>
   <body>
     <noscript>
