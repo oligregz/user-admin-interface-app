@@ -5,13 +5,32 @@
       <form @submit.prevent="saveEmployee">
         <label v-for="(value, key) in employee" :key="key">
           {{ key }}:
-          <input v-if="key !== 'ativo' && key !== 'criador' && key !== 'id' && key !== 'dataInicio'" type="text" v-model="employee[key]" />
+          <input
+            v-if="
+              key !== 'ativo' &&
+              key !== 'criador' &&
+              key !== 'id' &&
+              key !== 'dataInicio'
+            "
+            type="text"
+            v-model="employee[key]"
+          />
           <select v-else-if="key === 'ativo'" v-model="employee[key]">
             <option value="false">false</option>
             <option value="true">true</option>
           </select>
-          <input v-else-if="key === 'dataInicio'" type="text" :value="employee[key]" readonly />
-          <input v-else-if="key === 'id'" type="text" v-model="employee[key]" readonly />
+          <input
+            v-else-if="key === 'dataInicio'"
+            type="text"
+            :value="employee[key]"
+            readonly
+          />
+          <input
+            v-else-if="key === 'id'"
+            type="text"
+            v-model="employee[key]"
+            readonly
+          />
           <input v-else type="text" :value="userAdm.name" disabled />
         </label>
         <button type="submit">Salvar</button>
@@ -31,16 +50,16 @@ export default {
   data() {
     return {
       employee: {
-        ativo: 'false',
-        cargo: '',
+        ativo: "false",
+        cargo: "",
         criador: {
-          nome: '',
-          id: '',
+          nome: "",
+          id: "",
         },
-        id: '',
-        nome: '',
-        sobrenome: '',
-        dataInicio: '',
+        id: "",
+        nome: "",
+        sobrenome: "",
+        dataInicio: "",
       },
     };
   },
@@ -63,26 +82,25 @@ export default {
     saveEmployee() {
       this.employee.criador = { id: this.userAdm.id, nome: this.userAdm.name };
 
-      const employes = JSON.parse(localStorage.getItem("employes")) || [];
-      employes.push(this.employee);
-      localStorage.setItem("employes", JSON.stringify(employes));
-      alert("Funcionário salvo com sucesso!");
-
-      // Limpar os campos do formulário
+      const employesData = JSON.parse(localStorage.getItem("employes")) || [];
+      employesData.push(this.employee);
+      localStorage.setItem("employes", JSON.stringify(employesData));
+      
       this.employee = {
-        ativo: 'false',
-        cargo: '',
+        ativo: "false",
+        cargo: "",
         criador: {
-          nome: '',
-          id: '',
+          nome: "",
+          id: "",
         },
-        id: '',
-        nome: '',
-        sobrenome: '',
-        dataInicio: '',
+        id: "",
+        nome: "",
+        sobrenome: "",
+        dataInicio: "",
       };
       this.generateId();
       this.setCurrentDate();
+      alert("Funcionário salvo com sucesso!");
     },
   },
 };
@@ -100,7 +118,8 @@ form {
 input {
   color: black;
 }
-select, option {
+select,
+option {
   color: black;
 }
 </style>

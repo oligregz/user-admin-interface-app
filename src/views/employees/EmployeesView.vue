@@ -21,12 +21,14 @@
         </button>
       </div>
     </ul>
+    <nav>
+      <a href="/adm" type="button" class="return-button"> voltar </a>
+    </nav>
   </div>
 </template>
 
 <script>
 import NavBar from "../../components/navbar/NavBar.vue";
-import getEmployes from "../../repository/serviceGetEmployes";
 
 export default {
   components: {
@@ -42,21 +44,19 @@ export default {
   },
   methods: {
     fetchEmployes() {
-      const employesData = getEmployes();
-      for (let i = 0; i < employesData.length; i++) {
-        this.employes.push(employesData[i]);
-      }
+      const employesData = JSON.parse(localStorage.getItem("employes")) || [];
+      this.employes = employesData;
     },
     removeEmployeeSection(index) {
       this.employes.splice(index, 1);
       localStorage.setItem("employes", JSON.stringify(this.employes));
     },
     saveEmployeeData(selectedEmployee) {
-      localStorage.removeItem('edit-employe');
-      localStorage.setItem('edit-employe', JSON.stringify(selectedEmployee));
-      let employee = localStorage.getItem('edit-employe');
+      localStorage.removeItem("edit-employe");
+      localStorage.setItem("edit-employe", JSON.stringify(selectedEmployee));
+      let employee = localStorage.getItem("edit-employe");
       if (employee) {
-        this.$router.push('/employee')
+        this.$router.push("/employee");
       }
     },
   },

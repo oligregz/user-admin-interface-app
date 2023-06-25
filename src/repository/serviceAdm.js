@@ -2,7 +2,7 @@ import uuidGenerator from '../utils/uuidGenerator';
 
 const saveUserAdm = (payload) => {
 
-  localStorage.clear();
+  localStorage.removeItem('userAdm');
 
   const adm = JSON.stringify(
     {
@@ -15,8 +15,6 @@ const saveUserAdm = (payload) => {
   localStorage.setItem('userAdm', adm)
 
   const admValues = JSON.parse(localStorage.getItem('userAdm'));
-
-  console.log(admValues);
 
   return admValues;
 }
