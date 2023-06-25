@@ -1,26 +1,79 @@
 <template>
   <div class="main" id="employees">
     <NavBar />
-    <ul>
-      <div
-        v-for="(employee, index) in employes"
-        :key="employee.id"
-        class="employee-section"
-        @click="saveEmployeeData(employee)"
-      >
-        <li class="employee">
-          <p>{{ `Id: ${employee.id}` }}</p>
-          <p>{{ `Nome Completo: ${employee.nome} ${employee.sobrenome}` }}</p>
-          <p>{{ `Cargo: ${employee.cargo}` }}</p>
-          <p>{{ `Data de início: ${employee.dataInicio}` }}</p>
-          <p>{{ `Contratante: ${employee.criador.nome}` }}</p>
-          <p>{{ `Id do contratante: ${employee.criador.id}` }}</p>
-        </li>
-        <button type="button" @click="removeEmployeeSection(index)">
-          Remover funcionário
-        </button>
-      </div>
-    </ul>
+    <div class="content">
+      <ul>
+        <div
+          v-for="(employee, index) in employes"
+          :key="employee.id"
+          class="employee-section"
+        >
+          <li @click="saveEmployeeData(employee)" class="employee">
+            <div class="input-wrapper">
+              <label for="employeeId">ID do funcionário:</label>
+              <input
+                type="text"
+                :value="`${employee.id}`"
+                id="employeeId"
+                readonly
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="employeeName">Nome Completo:</label>
+              <input
+                type="text"
+                :value="`${employee.nome} ${employee.sobrenome}`"
+                id="employeeName"
+                readonly
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="employeePosition">Cargo:</label>
+              <input
+                type="text"
+                :value="employee.cargo"
+                id="employeePosition"
+                readonly
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="employeeStartDate">Data de início:</label>
+              <input
+                type="text"
+                :value="employee.dataInicio"
+                id="employeeStartDate"
+                readonly
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="employeeCreator">Contratante:</label>
+              <input
+                type="text"
+                :value="employee.criador.nome"
+                id="employeeCreator"
+                readonly
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="employeeCreatorId">Id do contratante:</label>
+              <input
+                type="text"
+                :value="employee.criador.id"
+                id="employeeCreatorId"
+                readonly
+              />
+            </div>
+          </li>
+          <button
+            id="remove-employee"
+            type="button"
+            @click="removeEmployeeSection(index)"
+          >
+            Remover funcionário
+          </button>
+        </div>
+      </ul>
+    </div>
     <nav>
       <a href="/adm" type="button" class="return-button"> voltar </a>
     </nav>
@@ -29,6 +82,7 @@
 
 <script>
 import NavBar from "../../components/navbar/NavBar.vue";
+import "./style.css";
 
 export default {
   components: {

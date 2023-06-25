@@ -21,7 +21,7 @@ body {
 
 .inputs-box {
   border-radius: 1rem;
-  background-color: rgba(75, 168, 205, 0.2);
+  background-color: rgba(75, 168, 205);
   padding: 1rem;
   width: 90%;
   margin: 0 auto;
@@ -51,6 +51,7 @@ body {
   margin-bottom: 1rem;
   font-weight: bold;
   transition: background-color 0.3s ease-in-out;
+  margin-bottom: 5rem;
 }
 
 .return-button:hover {

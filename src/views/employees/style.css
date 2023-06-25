@@ -1,0 +1,105 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+ul {
+  width: 95%;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: 90%;
+}
+
+.employee-section {
+  background-color: rgba(252, 252, 252, 0.1);
+  border-radius: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper label {
+  display: block;
+  padding-top: 1rem;
+}
+
+.input-wrapper input[type="text"] {
+  width: 85%;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 0.3125rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+}
+
+.input-wrapper input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.7);
+}
+
+#remove-employee {
+  border: 0.2rem solid orangered;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.5rem;
+  margin: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  width: 40%;
+  height: 30%;
+}
+
+#remove-employee:hover {
+  background-color: red;
+}
+
+@media(max-width: 768px) {
+  #remove-employee {
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    width: 50%;
+    height: 30%;
+    background-color: red;
+  }
+  ul {
+    width: 95%;
+  }
+  
+}
+
+@media(min-width: 768px) {
+
+  #remove-employee {
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    width: 90%;
+    height: 10%;
+  }
+
+  ul {
+    width: 25%;
+  }
+
+  .employee-section {
+    margin: 1rem;
+  }
+}
