@@ -4,7 +4,7 @@
     <div class="form-section">
       <form @submit.prevent="saveEmployee">
         <label v-for="(value, key) in employee" :key="key">
-          {{ key }}:
+          <div>{{ `${key}:` }}</div>
           <input
             v-if="
               key !== 'ativo' &&
@@ -33,7 +33,7 @@
           />
           <input v-else type="text" :value="userAdm.name" disabled />
         </label>
-        <button type="submit">Salvar</button>
+        <button class="save" type="submit">Salvar</button>
       </form>
       <nav>
         <a href="/adm" type="button" class="return-button">
@@ -47,6 +47,7 @@
 <script>
 import NavBar from "../../components/navbar/NavBar.vue";
 import myuuid from "../../utils/uuidGenerator";
+import "./style.css"
 
 export default {
   components: {
@@ -90,7 +91,7 @@ export default {
       const employesData = JSON.parse(localStorage.getItem("employes")) || [];
       employesData.push(this.employee);
       localStorage.setItem("employes", JSON.stringify(employesData));
-      
+
       this.employee = {
         ativo: "false",
         cargo: "",
@@ -112,19 +113,5 @@ export default {
 </script>
 
 <style scoped>
-.form-section {
-  margin-top: 20px;
-}
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-input {
-  color: black;
-}
-select,
-option {
-  color: black;
-}
 </style>

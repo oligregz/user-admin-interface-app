@@ -3,6 +3,15 @@
     <NavBar />
     <div class="edit-employee-section">
       <form>
+        <label for="dataInicio">Id:</label>
+        <input
+          id="dataInicio"
+          type="text"
+          v-model="employee.id"
+          :disabled="!editing"
+          readonly
+        />
+
         <label for="nome">Nome:</label>
         <input
           id="nome"
@@ -17,15 +26,6 @@
           type="text"
           v-model="employee.sobrenome"
           :disabled="!editing"
-        />
-
-        <label for="dataInicio">Id:</label>
-        <input
-          id="dataInicio"
-          type="text"
-          v-model="employee.id"
-          :disabled="!editing"
-          readonly
         />
 
         <label for="cargo">Cargo:</label>
