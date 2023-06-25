@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import NavBar from "../../components/NavBar.vue";
+import NavBar from "../../components/navbar/NavBar.vue";
 import getEmployes from "../../repository/serviceGetEmployes";
 
 export default {

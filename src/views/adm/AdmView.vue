@@ -3,19 +3,23 @@
     <NavBar />
     <nav>
       <div class="box-navigatin">
-        <a href="/employees" type="button" class="btn btn-primary btn-lg"
+        <a href="/employees" type="button" class="employee-button"
           >FUNCIONÁRIOS</a
         >
-        <a href="/administration" type="button" class="btn btn-secondary btn-lg"
+        <a href="/administration" type="button" class="management-button"
           >GESTÃO</a
         >
+        <a href="/" type="button" class="return-button">
+          voltar
+        </a>
       </div>
     </nav>
   </div>
 </template>
 
 <script>
-import NavBar from "../../components/NavBar.vue";
+import NavBar from "../../components/navbar/NavBar.vue";
+import "./style.css";
 
 export default {
   components: {

@@ -44,6 +44,20 @@ body {
   color: rgb(33, 150, 243);
 }
 
+.return-button {
+  border: 0.2rem solid orangered;
+  border-radius: 0.4rem;
+  padding: 0.8rem 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.return-button:hover {
+  background-color: red;
+  color: black;
+}
+
 @media (max-width: 767px) {
   #tilte {
     margin-bottom: 3rem;

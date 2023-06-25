@@ -1,0 +1,45 @@
+.box-navigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-button {
+  border: none;
+  background-color: rgba(0, 0, 255, 0.7);
+  color: white;
+  border-radius: 0.4rem;
+  padding: 1.6rem 3.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.employee-button:hover {
+  background-color: rgb(28, 157, 200);
+  color: black;
+}
+
+.management-button {
+  border: none;
+  background-color: rgba(254, 254, 0, 0.7);
+  border-radius: 0.4rem;
+  padding: 1.6rem 3.2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+
+}
+
+.management-button:hover {
+  background-color: yellowgreen;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .employee-button,
+  .management-button {
+    width: 85%;
+  }
+}
