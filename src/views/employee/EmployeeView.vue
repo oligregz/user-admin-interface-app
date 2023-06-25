@@ -19,6 +19,15 @@
           :disabled="!editing"
         />
 
+        <label for="dataInicio">Id:</label>
+        <input
+          id="dataInicio"
+          type="text"
+          v-model="employee.id"
+          :disabled="!editing"
+          readonly
+        />
+
         <label for="cargo">Cargo:</label>
         <input
           id="cargo"
@@ -49,14 +58,21 @@
           <option value="false">false</option>
         </select>
 
-        <button v-if="!editing" type="button" @click="startEditing">
+        <button
+          class="auth"
+          v-if="!editing"
+          type="button"
+          @click="startEditing"
+        >
           Clique para ter a permissão de edição do funcionário
         </button>
+
         <button
           v-if="editing"
           type="button"
           @click="saveEmployee"
           :disabled="!isFormValid"
+          class="save"
         >
           Salvar
         </button>
@@ -67,6 +83,7 @@
 
 <script>
 import NavBar from "../../components/navbar/NavBar.vue";
+import "./style.css";
 
 export default {
   components: {
@@ -110,31 +127,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.edit-employee-section {
-  margin-top: 20px;
-}
+<style>
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-label {
-  margin-bottom: 5px;
-}
-
-input {
-  margin-bottom: 10px;
-  color: black;
-}
-
-option {
-  color: black;
-}
-
-button {
-  margin-top: 10px;
-}
 </style>
