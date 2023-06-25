@@ -77,6 +77,9 @@
           Salvar
         </button>
       </form>
+      <nav>
+        <a href="/adm" type="button" class="return-button"> voltar </a>
+      </nav>
     </div>
   </div>
 </template>
@@ -119,14 +122,18 @@ export default {
       this.editing = true;
     },
     saveEmployee() {
-      localStorage.removeItem("edit-employe");
-      localStorage.setItem("edit-employe", JSON.stringify(this.employee));
-      this.editing = false;
+      const confirmation = confirm(
+        "Deseja mesmo alterar os dados desse funcionário?"
+      );
+      if (confirmation) {
+        localStorage.removeItem("edit-employe");
+        localStorage.setItem("edit-employe", JSON.stringify(this.employee));
+        this.editing = false;
+        alert("Dados do funcionário atualizados");
+      }
     },
   },
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
