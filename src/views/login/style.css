@@ -1,0 +1,40 @@
+.main label {
+  color: white;
+}
+
+h1 {
+  margin-bottom: 4rem;
+  font-weight: bold;
+  font-size: 4rem;
+  color: rgb(33, 150, 243);
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs-box {
+  border-radius: 1rem;
+  background-color: rgba(75, 168, 205, 0.2);
+  padding: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+button {
+  margin-top: 2rem;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+  .inputs-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

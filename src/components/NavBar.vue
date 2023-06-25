@@ -1,5 +1,8 @@
 <template>
-  <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+  <nav
+    id="navbar"
+    class="flex items-center justify-between flex-wrap bg-teal-500 p-6"
+  >
     <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
       <div class="text-sm lg:flex-grow">
         <a
@@ -28,6 +31,7 @@
 
 <script setup>
 import { ref } from "vue";
+import "./style.css";
 
 const userName = ref(localStorage.getItem("userAdm"));
 const parsedUserName = JSON.parse(userName.value);
@@ -37,5 +41,5 @@ const handleLogout = () => {
   localStorage.removeItem("userAdm");
   localStorage.removeItem("edit-employee");
   localStorage.removeItem("employes");
-}
+};
 </script>
