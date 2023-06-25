@@ -6,6 +6,11 @@
   z-index: 9999;
 }
 
+.main {
+  margin-top: 6rem;
+  overflow-y: auto;
+}
+
 .text-sm {
   display: flex;
   justify-content: space-between;

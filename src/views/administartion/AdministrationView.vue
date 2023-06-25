@@ -35,6 +35,11 @@
         </label>
         <button type="submit">Salvar</button>
       </form>
+      <nav>
+        <a href="/adm" type="button" class="return-button">
+          voltar
+        </a>
+      </nav>
     </div>
   </div>
 </template>
