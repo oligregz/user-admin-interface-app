@@ -6,6 +6,9 @@ This is the User Admin Interface, an application designed to manage employees.
 
 ## Access flow
 
+- Explaining the flow: https://youtu.be/9uGbLLqKPC0
+- Smartphone access flow: https://youtu.be/NTLAslXnvRc
+
 > Access with default user
 ![Texto alternativo](./doc/default-user.png)
 <br></br>
