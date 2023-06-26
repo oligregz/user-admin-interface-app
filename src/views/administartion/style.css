@@ -18,6 +18,11 @@
   width: 90%;
 }
 
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 form {
   display: flex;
   flex-direction: column;

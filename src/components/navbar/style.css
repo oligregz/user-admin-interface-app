@@ -4,10 +4,13 @@
   left: 0;
   right: 0;
   z-index: 9999;
+  background-color: rgb(45, 156, 215);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .main {
-  margin-top: 6rem;
+  margin-top: 7rem;
   overflow-y: auto;
 }
 
@@ -16,14 +19,38 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  margin-left: 0.5rem;
 }
 
 .text-sm a {
   margin-right: 1rem;
-  color: #e2e8f0;
+  color: black;
   transition: color 0.3s;
 }
 
 .text-sm a:hover {
   color: #fff;
+}
+
+#first-letter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+}
+
+#logout-link {
+  color: white;
+}
+
+.logout-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: red;
+  text-decoration: none;
 }

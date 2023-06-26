@@ -2,6 +2,7 @@
   <div class="main" id="administration">
     <NavBar />
     <div class="form-section">
+      <h2 class="section-title">Adicione um funcionário</h2>
       <form @submit.prevent="saveEmployee">
         <label v-for="(value, key) in employee" :key="key">
           <div>{{ `${key}:` }}</div>
@@ -113,5 +114,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
