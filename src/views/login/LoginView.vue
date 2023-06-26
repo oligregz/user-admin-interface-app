@@ -65,6 +65,7 @@
 
 <script>
 import { mapActions } from 'vuex';
+import getEmployes from "@/repository/serviceGetEmployes";
 import admValues from "../../repository/serviceAdm";
 import "./style.css";
 
@@ -83,6 +84,7 @@ export default {
       password: 'asdf1234'
     };
     localStorage.setItem('userAdm', JSON.stringify(userAdm));
+    getEmployes()
   },
   methods: {
     ...mapActions('LOGIN', ['ActionSetUserAdm']),

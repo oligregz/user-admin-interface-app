@@ -19,15 +19,11 @@
 
 <script>
 import NavBar from "../../components/navbar/NavBar.vue";
-import getEmployes from "@/repository/serviceGetEmployes";
 import "./style.css";
 
 export default {
   components: {
     NavBar,
-  },
-  created() {
-    getEmployes()
   },
 };
 </script>

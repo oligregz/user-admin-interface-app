@@ -126,10 +126,27 @@ export default {
         "Deseja mesmo alterar os dados desse funcionário?"
       );
       if (confirmation) {
-        localStorage.removeItem("edit-employe");
-        localStorage.setItem("edit-employe", JSON.stringify(this.employee));
+        const updatedEmployee = JSON.parse(
+          localStorage.getItem("edit-employe")
+        );
+        updatedEmployee.nome = this.employee.nome;
+        updatedEmployee.sobrenome = this.employee.sobrenome;
+        updatedEmployee.cargo = this.employee.cargo;
+        updatedEmployee.dataInicio = this.employee.dataInicio;
+        updatedEmployee.criador.nome = this.employee.criador.nome;
+        updatedEmployee.ativo = this.employee.ativo;
+
+        const employesData = JSON.parse(localStorage.getItem("employes")) || [];
+        const index = employesData.findIndex(
+          (emp) => emp.id === updatedEmployee.id
+        );
+        if (index !== -1) {
+          employesData[index] = updatedEmployee;
+          localStorage.setItem("employes", JSON.stringify(employesData));
+          alert("Dados do funcionário atualizados");
+        }
+
         this.editing = false;
-        alert("Dados do funcionário atualizados");
       }
     },
   },
